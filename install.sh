@@ -9,8 +9,8 @@ sudo apt install -y tmux
 mkdir -p ~/.config/tmux/
 cp tmux.conf ~/.config/tmux/tmux.conf
 git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
-tmux source ~/.config/tmux/tmux.conf
-~/.config/tmux/plugins/tpm/scripts/update_plugin.sh
+tmux source-file ~/.config/tmux/tmux.conf
+tmux run-shell "~/.config/tmux/plugins/tpm/bin/install_plugins"
 
 
 ## Nvim Installation
@@ -24,7 +24,7 @@ sudo mv nvim /usr/bin/nvim
 
 mkdir -p ~/.config/nvim/
 git clone https://github.com/NvChad/starter ~/.config/nvim
-rm -r ~/.config/nvim/.git
+rm -rf ~/.config/nvim/.git
 
 cat mappings.lua >> ~/.config/nvim/lua/mappings.lua
 cat init.lua >> ~/.config/nvim/lua/init.lua
