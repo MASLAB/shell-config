@@ -11,9 +11,9 @@ cp tmux.conf ~/.config/tmux/tmux.conf
 git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 
 tmux -L tmux-tmp new-session -d
-tmux source-file ~/.config/tmux/tmux.conf
-tmux run-shell "~/.config/tmux/plugins/tpm/bin/install_plugins"
-tmux kill-session -s tmux-tmp
+tmux -L tmux-tmp source-file ~/.config/tmux/tmux.conf
+tmux -L tmux-tmp run-shell "~/.config/tmux/plugins/tpm/bin/install_plugins"
+tmux -L tmux-tmp kill-server
 
 ## Nvim Installation
 ARCHITECTURE=$(uname -m)
