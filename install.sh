@@ -4,6 +4,7 @@
 ## Tmux Installation
 sudo apt install -y tmux
 mkdir -p ~/.config/tmux/
+cp tmux.conf ~/.config/tmux/tmux.conf
 git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 tmux source ~/.config/tmux/tmux.conf
 bash ~/.config/tmux/plugins/tpm/scripts/update_plugin.sh
@@ -16,7 +17,7 @@ if [ "$ARCHITECTURE" == "aarch64" ]; then
 fi
 curl -o nvim -LO "https://github.com/neovim/neovim/releases/latest/download/nvim-linux-$ARCHITECTURE.appimage"
 chmod u+x nvim
-mv nvim /usr/bin/nvim
+sudo mv nvim /usr/bin/nvim
 
 mkdir -p ~/.config/nvim/
 git clone https://github.com/NvChad/starter ~/.config/nvim
