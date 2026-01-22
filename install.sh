@@ -36,5 +36,5 @@ cp vimtmux.lua ~/.config/nvim/lua/plugins/vimtmux.lua
 ## Setup PS1
 sudo apt install -y fonts-powerline
 TRIANGLE=$'\ue0b0'
-echo "PS1='\[\e[48;5;239m\] staff@maslab \[\e[0;38;5;239m\]${TRIANGLE}\[\e[0m\] \w \[\e[38;5;112m\]\$\[\e[0m\] '" >> ~/.bashrc
+echo "PS1='\[\e[48;5;239m\] \u@\h \[\e[0;38;5;239m\]${TRIANGLE}\[\e[0m\] \w \[\e[38;5;112m\]\$\[\e[0m\] '" >> ~/.bashrc
 source ~/.bashrc
